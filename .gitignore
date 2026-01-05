@@ -1,0 +1,13 @@
+# =========================
+# Keep empty directories
+# =========================
+
+# Ignore all contents
+.swp/*
+.backup/*
+.undo/*
+
+# But keep directory placeholders
+!.swp/.gitkeep
+!.backup/.gitkeep
+!.undo/.gitkeep
