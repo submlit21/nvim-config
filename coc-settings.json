@@ -16,16 +16,39 @@
     "omnisharp-dotnet": {
       "command": "dotnet",
       "args": [
-        "/usr/local/lib/dotnet/omnisharp/OmniSharp.dll",
+        "~/.local/share/lsp/omnisharp/OmniSharp.dll",
         "--languageserver",
         "--hostPID",
         "${PID}"
       ],
       "filetypes": ["cs"],
       "rootPatterns": ["*.csproj", "*.sln", ".git"]
+    },
+    "go": {
+        "command": "gopls",
+        "filetypes": ["go"],
+        "rootPatterns": ["go.mod", ".git"],
+        "initializationOptions": {
+            "usePlaceholders": true,
+            "completeUnimported": true,
+            "gofumpt": false
+        }
+    },
+    "jdtls": {
+        "command": "java",
+        "args": [
+            "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+            "-Dosgi.bundles.defaultStartLevel=4",
+            "-Declipse.product=org.eclipse.jdt.ls.core.product",
+            "-jar", "~/.local/share/lsp/jdt-language-server-1.54/plugins/org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar",
+            "-configuration", "~/.local.share/lsp/jdt-language-server-1.54/config_linux",
+            "-data", "~/.local/share/lsp/jdt-language-server-1.54/workspace"
+        ],
+        "rootPatterns": ["pom.xml", "build.gradle", ".git/"],
+        "filetypes": ["java"],
+        "initializationOptions": {}
     }
   },
-
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-17",
