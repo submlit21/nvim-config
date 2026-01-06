@@ -1,24 +1,38 @@
 {
-    "languageserver":{
-        "ccls":{
-            "command":"ccls",
-            "filetypes":["c","cc","cpp","c++","h"],
-            "rootPatterns":[".ccls","compile_commands.json",".git/",".root"],
-            "trace.server": "verbose",
-            "initializationOptions":{
-                "cache":{
-                    "directory":".cache/ccls"
-                },
-                "highlight":{"lsRanges":true}
-            }
-        }
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++", "h"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".root"],
+      "trace.server": "verbose",
+      "initializationOptions": {
+        "cache": {
+          "directory": ".cache/ccls"
+        },
+        "highlight": { "lsRanges": true }
+      }
     },
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-17",
-            "path": "/usr/local/lib/java/jdk-17",
-            "default": true
-        }
-    ],
-    "java.jdt.ls.lombokSupport.enabled": false
+
+    "omnisharp-dotnet": {
+      "command": "dotnet",
+      "args": [
+        "/usr/local/lib/dotnet/omnisharp/OmniSharp.dll",
+        "--languageserver",
+        "--hostPID",
+        "${PID}"
+      ],
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", "*.sln", ".git"]
+    }
+  },
+
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/usr/local/lib/java/jdk-17",
+      "default": true
+    }
+  ],
+  "java.jdt.ls.lombokSupport.enabled": false
 }
+
