@@ -71,6 +71,7 @@ lua require("session-config")
 lua require("coc-config")
 lua require("nvimTree")
 
+autocmd BufNewFile,BufRead *.csproj setfiletype xml
 
 map <F2> :NvimTreeToggle<CR>
 " map <F2> :NERDTreeToggle<CR>
