@@ -30,8 +30,8 @@ set tags=tags;/
 " set visualbell
 set history=5000
 set autoread
-set listchars=tab:»■,trail:■
-set list
+" set listchars=tab:󰌒.,trail:󱁐
+" set list
 set wildmenu
 set wildmode=longest:list,full
 filetype indent on
